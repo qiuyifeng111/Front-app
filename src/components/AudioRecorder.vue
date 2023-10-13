@@ -51,10 +51,14 @@ export default {
 
         try {
           const response = await axios.post('http://localhost:5000/upload',formData);
-          console.log('音频上传成功', response);
+          console.log('图像生成成功', response);
           // 可以在这里处理上传成功后的逻辑
+          const base64Images =response.data.message
+          for (const base64Image of base64Images) {
+            this.$store.commit('addImageToLibrary',"data:image/png;base64,"+base64Image.b64_json);
+          }
         } catch (error) {
-          console.error('音频上传失败', error);
+          console.error('图像生成失败', error);
         }
       }
     },

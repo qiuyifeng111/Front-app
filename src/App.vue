@@ -7,15 +7,19 @@
     <h1>音频录制应用</h1>
     <AudioRecorder />
   </div>
+  <div>
+    <image-library />
+  </div>
 </template>
 
 <script>
 import AudioRecorder from './components/AudioRecorder.vue';
-
+import ImageLibrary from './components/ImageLibrary.vue';
 export default {
   name: 'App',
   components: {
     AudioRecorder,
+    ImageLibrary,
   }
 }
 
